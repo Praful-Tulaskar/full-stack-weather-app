@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:opsz,wght@8..30,200;8..30,300;8..30,400;8..30,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Piazzolla', serif;
+}
+
+:root{
+    --bg-color: #1e272e;
+    --text-color: #0097e6;
+}
+html{
+    font-size: 62.5%;   /* Is line k vjh se 1rem = 10px ho jayega */
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    margin: 0;
+}
+.main_menu{
+    background-color: var(--bg-color);
+}
+.navbar{
+    background-color: var(--bg-color);
+    color: #fff;
+    padding: 2rem 0;
+}
+.navbar li{
+    margin-left: 2rem;
+}
+.navbar a{
+    color: #fff;
+    font-size: 1.8rem;
+}
+.navbar a:hover{
+    color: var(--text-color);
+}
+.navbar-toggler{
+    background-color: gray;
+}
+.fa-snowflake{
+    transition: all linear;
+    animation: rotate 2s linear infinite;
+    color: var(--text-color);
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* main section */
+.main_header_left, .main_header_right{
+    height: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main_header_right figure img{
+    filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.3));
+}
+.main_header_left p{
+    font-size: 2rem;
+}
+.main_header_left h1{
+    font-size: 4rem;
+    text-transform: capitalize;
+    margin: 1rem 0 4rem 0;
+}
+.main_header_left h1 span{
+    color: var(--text-color);
+}
+.main_header_left button{
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px #000;
+    outline: none;
+}
+.main_header_left button:hover{
+    box-shadow: 0 8px 6px -6px var(--text-color);
+}
+
+/* Weather page css */
+
+.form{
+    width: 60%;
+    position: relative;
+    margin: 10rem auto 6rem;
+}
+.form input[type="text"]{
+    width: 100%;
+    padding: 2rem 5rem 2rem 2rem;
+    border: none;
+    outline: none;
+    background-color: #1e202b;
+    color: #fff;
+    font-size: 1.7rem;
+    border-radius: 3rem;
+}
+::placeholder{
+    color: #bfc1c8;
+}
+.form input[type="submit"]{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: #009ad8;
+    padding: 0 3rem;
+    border-radius: 3rem;
+    color: #fff;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+}
+.form input[type="submit"]:hover{
+    color: #009ad8;
+    background-color: #fff;
+}
+.weatherinfo{
+    width: 40rem;
+    margin: auto;
+    min-height: 20rem;
+    background-color: #323544;
+    border-radius: 1rem;
+    font-family: "Roboto", "sans-serif";
+}
+.top_section{
+    width: 100%;
+    height: 20%;
+    background-color: #2d303d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+}
+.top_section p{
+    color: #fff;
+    font-weight: 300;
+    padding: 2rem;
+    font-size: 1.3rem;
+}
+.main_section{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.main_section #city_name{
+    padding: 2rem;
+    color: #bfc1c8;
+    font-weight: 300;
+    font-size: 2rem;
+}
+.main_section .temp_section{
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+.main_section .temp_section p, .main_section .temp_section i{
+    font-weight: 900;
+    font-size: 7rem;
+}
+.main_section .temp_section i{
+    color: #009ad8;
+}
+sup{
+    font-size: 6rem;
+    margin-top: -2rem;
+}
+.data_hide{
+    visibility: hidden;
+    transition: all 0.3s linear;
+}
+
+/* footer section */
+footer{
+    width: 100%;
+    background-color: var(--bg-color);
+    margin-top: auto;
+}
+footer p {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    line-height: 5rem;
+    font-size: 1.4rem;
+}
+
+
+/* Responsive code */
+@media(max-width: 768px){
+    .main_header_left{
+        height: auto;
+        margin: 5rem 0;
+    }
+    .main_header_right{
+        height: auto;
+        margin-top: 3rem;
+    }
+    .form{
+        width: auto;
+    }
+    .weatherinfo{
+        width: auto;
+        margin-bottom: 5rem;
+    }
+    .main_section .temp_section p, .main_section .temp_section i{
+        font-weight: 600;
+        font-size: 4rem;
+    }
+    sup{
+        font-size: 3rem;
+        margin-top: -1rem;
+    }
+}
